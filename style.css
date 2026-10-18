@@ -1,0 +1,68 @@
+/* Body Changes */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fc;
+    color: #222222;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #24476b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Navigation links */
+nav a {
+    color: white;
+    padding: 5px;
+}
+
+/* Main */
+main {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+
+
+/* Table of Contents*/
+#table-of-contents {
+    background-color: #e8f0fa;
+    padding: 15px;
+}
+
+/* Headings */
+h2 {
+    color: #24476b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Home */
+
+/* About */
+
+/* History */
+
+/* Techniques */
+
+/* Key Concepts */
+
+/* References */
+
+
