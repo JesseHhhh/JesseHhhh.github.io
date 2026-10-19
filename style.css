@@ -35,6 +35,12 @@ main {
     border: 1px solid #cccccc;
 }
 
+/*Image adjustments */
+img {
+    width: 100%;
+    max-width: 600px;
+    height:auto;
+}
 
 /* Table of Contents*/
 #table-of-contents {
@@ -52,6 +58,7 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
 
 /* Home */
 
