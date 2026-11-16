@@ -178,6 +178,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 }
 
+// Reset the quiz when the retake button is clicked
+quizForm.addEventListener("reset", function() {
+    clearInterval(countdown);
+
+    // Clear previous results
+    resultsSection.hidden = true;
+    document.getElementById("result-summary").textContent = "";
+    document.getElementById("question-feedback").innerHTML = "";
+
+    // Reset the timer
+    timeLeft = 600;
+
+    // Start the timer again after the form resets
+    setTimeout(startTimer, 0);
+});
+
 // Start the timer when the page loads
 startTimer();
 });
+
