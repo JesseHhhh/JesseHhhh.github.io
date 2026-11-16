@@ -17,6 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
     q10: "b"
 };
 
+    // Gets the selected answer for a multiple-choice question
+    function getRadioAnswer(questionName) {
+    const selectedAnswer = quizForm.querySelector(
+        'input[name="' + questionName + '"]:checked'
+    );
+
+    if (selectedAnswer) {
+        return selectedAnswer.value;
+    } else {
+        return "";
+    }
+}
+
+
+
 
     let timeLeft = 600;
 
