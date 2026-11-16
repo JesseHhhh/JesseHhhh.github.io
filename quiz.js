@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 // Grades the quiz when the student submits it
-quizForm.addEventListener("submit", function(event) {
+    quizForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
     // Stop the timer when the quiz is submitted
@@ -158,24 +158,26 @@ quizForm.addEventListener("submit", function(event) {
 
 
     let timeLeft = 600;
+    let countdown;
 
-    const countdown = setInterval(function() {
-        // Math.floor calculates the number of minutes
+    // Function to start the timer
+    function startTimer() {
+    countdown = setInterval(function() {
         let minutes = Math.floor(timeLeft / 60);
         let seconds = timeLeft % 60;
 
-        // textContent updates the timer shown on the page
-        timerDisplay.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        timerDisplay.textContent =
+            minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
         timeLeft--;
 
         if (timeLeft < 0) {
-        // clearInterval stops the countdown
-        clearInterval(countdown);
-
-        // Automatically submits the quiz when time runs out
-        quizForm.requestSubmit();
-    
+            clearInterval(countdown);
+            quizForm.requestSubmit();
         }
     }, 1000);
+}
+
+// Start the timer when the page loads
+startTimer();
 });
