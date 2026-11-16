@@ -3,6 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const timerDisplay = document.getElementById("timer");
     const resultsSection = document.getElementById("results");
 
+    // Correct answers for the SEO quiz
+    const answerKey = {
+    q1: "search engine optimization",
+    q2: "keywords",
+    q3: "a",
+    q4: "b",
+    q5: "c",
+    q6: "a",
+    q7: "a",
+    q8: ["a", "b", "c"],
+    q9: "a",
+    q10: "b"
+};
+
+
     let timeLeft = 600;
 
     const countdown = setInterval(function() {
