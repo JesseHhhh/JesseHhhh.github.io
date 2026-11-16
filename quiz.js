@@ -112,6 +112,44 @@ quizForm.addEventListener("submit", function(event) {
         "You did not pass. Your score: " + score + " out of 10.";
     }
 
+    // Display feedback for each question
+    const questionFeedback = document.getElementById("question-feedback");
+
+    questionFeedback.innerHTML = `
+    <p>Question 1: ${q1 === answerKey.q1 ? "Correct" : "Incorrect"}.
+    Correct answer: Search Engine Optimization</p>
+
+    <p>Question 2: ${q2 === answerKey.q2 ? "Correct" : "Incorrect"}.
+    Correct answer: Keywords</p>
+
+    <p>Question 3: ${getRadioAnswer("q3") === answerKey.q3 ? "Correct" : "Incorrect"}.
+    Correct answer: A</p>
+
+    <p>Question 4: ${getRadioAnswer("q4") === answerKey.q4 ? "Correct" : "Incorrect"}.
+    Correct answer: B</p>
+
+    <p>Question 5: ${getRadioAnswer("q5") === answerKey.q5 ? "Correct" : "Incorrect"}.
+    Correct answer: C</p>
+
+    <p>Question 6: ${getRadioAnswer("q6") === answerKey.q6 ? "Correct" : "Incorrect"}.
+    Correct answer: A</p>
+
+    <p>Question 7: ${getRadioAnswer("q7") === answerKey.q7 ? "Correct" : "Incorrect"}.
+    Correct answer: A</p>
+
+    <p>Question 8: ${q8Answers.length === answerKey.q8.length &&
+    answerKey.q8.every(function(answer) {
+        return q8Answers.includes(answer);
+    }) ? "Correct" : "Incorrect"}.
+    Correct answers: A, B, and C</p>
+
+    <p>Question 9: ${getRadioAnswer("q9") === answerKey.q9 ? "Correct" : "Incorrect"}.
+    Correct answer: A</p>
+
+    <p>Question 10: ${getRadioAnswer("q10") === answerKey.q10 ? "Correct" : "Incorrect"}.
+    Correct answer: B</p>
+`;
+
     // Show the results section
     resultsSection.hidden = false;
 });
