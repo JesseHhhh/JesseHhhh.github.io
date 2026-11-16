@@ -16,9 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
         timeLeft--;
 
         if (timeLeft < 0) {
-            // clearInterval stops the countdown when it finishes
-            clearInterval(countdown);
-            alert("Time is up!");
+        // clearInterval stops the countdown
+        clearInterval(countdown);
+
+        // Automatically submits the quiz when time runs out
+        quizForm.requestSubmit();
+    
         }
     }, 1000);
 });
