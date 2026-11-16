@@ -3,25 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const timerDisplay = document.getElementById("timer");
     const resultsSection = document.getElementById("results");
 
+    let timeLeft = 600;
 
-let timeLeft =600; 
+    const countdown = setInterval(function() {
+        // Math.floor calculates the number of minutes
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
 
-const timer = document.getElementById("timer");
+        // textContent updates the timer shown on the page
+        timerDisplay.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
-const countdown = setInterval (function() {
-    // math floor calculates the number of minutes 
-    let minutes = Math.floor(timeLeft/60);
-    let seconds = timeLeft %60;
+        timeLeft--;
 
-    //textContent updates the timer shown in the page
-    timer.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-
-    timeLeft--;
-
-    if (timeLeft < 0) {
-        //clearInterval stops the countdown when it finishes
-        clearInterval(countdown);
-        alert("Time is up!");
-    }
-},1000);
+        if (timeLeft < 0) {
+            // clearInterval stops the countdown when it finishes
+            clearInterval(countdown);
+            alert("Time is up!");
+        }
+    }, 1000);
 });
