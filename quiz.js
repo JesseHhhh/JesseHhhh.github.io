@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const quizForm = document.getElementById("seo-quiz");
+    const timerDisplay = document.getElementById("timer");
+    const resultsSection = document.getElementById("results");
+
+
 let timeLeft =600; 
 
 const timer = document.getElementById("timer");
@@ -17,4 +23,5 @@ const countdown = setInterval (function() {
         clearInterval(countdown);
         alert("Time is up!");
     }
-},1000)
+},1000);
+});
