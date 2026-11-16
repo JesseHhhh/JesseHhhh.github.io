@@ -101,9 +101,16 @@ quizForm.addEventListener("submit", function(event) {
         score++;
     }
 
-    // Display the final score
-    document.getElementById("result-summary").textContent =
-        "Your score: " + score + " out of 10";
+    // Display the final score and pass/fail message
+    const resultSummary = document.getElementById("result-summary");
+
+    if (score >= 7) {
+    resultSummary.textContent =
+        "You passed! Your score: " + score + " out of 10.";
+    } else {
+    resultSummary.textContent =
+        "You did not pass. Your score: " + score + " out of 10.";
+    }
 
     // Show the results section
     resultsSection.hidden = false;
